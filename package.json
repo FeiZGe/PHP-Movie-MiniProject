@@ -4,6 +4,6 @@
     "tailwindcss": "^3.4.13"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./style/twinput.css -o ./style/twoutput.css --watch"
+    "dev": "npx tailwindcss -i ./src/style/twinput.css -o ./src/style/twoutput.css --watch"
   }
 }
