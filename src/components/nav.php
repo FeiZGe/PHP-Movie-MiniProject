@@ -2,7 +2,7 @@
     <div class="grid grid-cols-3 gap-2">
         <!-- Logo -->
         <section class="col-span-1 flex items-center">
-            <h1 class="text-2xl font-raleway">Pandora</h1>
+            <h1 class="text-2xl font-raleway font-extrabold">Pandora</h1>
         </section>
 
         <!-- menu -->
