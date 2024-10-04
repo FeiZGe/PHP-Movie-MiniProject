@@ -24,7 +24,8 @@
     <main class="container mx-auto px-3 mt-3">
 
         <!-- Hero -->
-        <div class="h-44"></div>
+        <div class="h-44"><!-- Space --></div>
+
         <section class="flex flex-col items-center justify-center h-min gap-3 sm:gap-5">
             <article class="text-center">
                 <h1 class="text-4xl sm:text-6xl font-bold mb-3 text-pretty">Free <span class="bg-gradient-to-br from-primary to-violet-600 bg-clip-text text-transparent">Streaming</span> movies</h1>
@@ -38,7 +39,7 @@
             </article>
         </section>
 
-        <div class="h-20"></div>
+        <div class="h-20"><!-- Space --></div>
 
         <!-- video window -->
         <section class="flex justify-center">
