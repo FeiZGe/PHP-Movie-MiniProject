@@ -54,6 +54,68 @@
                 </div>
             </div>
         </section>
+
+        <!-- Feature -->
+        <section class="mb-14">
+            <!-- Feature Head -->
+            <article class="flex flex-col justify-center items-center text-center mt-14">
+
+                <p class="my-3 text-neutral-300 text-xs py-1 px-2 bg-base-100 rounded-full outline outline-1 outline-neutral-600 shadow-lg shadow-indigo-500/50">
+                    Our Feature
+                </p>
+
+                <h2 class="w-1/2 text-3xl sm:text-4xl font-medium text-pretty py-2 mb-14 bg-gradient-to-r from-neutral-400 via-neutral-200 to-neutral-400 bg-clip-text text-transparent">
+                    Why Choose Us for Your Streaming Needs?
+                </h2>
+            </article>
+
+            <!-- Feature Card -->
+            <article class="h-80 flex flex-row justify-center items-center gap-5">
+
+                <!-- card 1 -->
+                <div class="card bg-base-200 w-72 h-full shadow-xl text-center">
+                    <!-- card icon -->
+                    <div class="m-4 h-3/5 bg-blue-300 rounded-lg"></div>
+
+                    <!-- card content -->
+                    <div class="flex flex-col mb-2 mx-4">
+                        <h3 class="text-lg font-semibold mb-1">HD Quality</h3>
+                        <p class="text-pretty text-sm opacity-75">
+                            Enjoy every movie in stunning high-definition.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+                <div class="card bg-base-200 w-72 h-full shadow-xl text-center">
+                    <!-- card icon -->
+                    <div class="m-4 h-3/5 bg-blue-300 rounded-lg"></div>
+
+                    <!-- card content -->
+                    <div class="flex flex-col mb-2 mx-4">
+                        <h3 class="text-lg font-semibold mb-1">Forever Free</h3>
+                        <p class="text-pretty text-sm opacity-75">
+                            Stream without ads or hidden fees for an uninterrupted experience!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="card bg-base-200 w-72 h-full shadow-xl text-center">
+                    <!-- card icon -->
+                    <div class="m-4 h-3/5 bg-blue-300 rounded-lg"></div>
+
+                    <!-- card content -->
+                    <div class="flex flex-col mb-2 mx-4">
+                        <h3 class="text-lg font-semibold mb-1">Latest Releases</h3>
+                        <p class="text-pretty text-sm opacity-75">
+                            Updated weekly with trending movies.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
     </main>
     <!-- End Main Content -->
 
