@@ -19,7 +19,7 @@
 <body class="font-poppins overflow-hidden">
     <header>
         <?php include('./components/nav.php'); ?>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
 
     </header>
 
@@ -93,8 +93,8 @@
     </main>
     <!-- End Main Content -->
 
-    <footer class="text-neutral-500 items-center p-4 container mx-auto flex flex-col-reverse justify-center sm:flex-row sm:justify-between gap-1">
-        <?php include('./components/footer.php'); ?>
+    <footer> 
+        
     </footer>
 </body>
 </html>
