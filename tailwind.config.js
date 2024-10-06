@@ -13,14 +13,7 @@ module.exports = {
     require('daisyui'),
   ],
   daisyui: {
-    themes: [
-      {
-        mytheme: {
-          "base-100": "#ffffff",
-        },
-      },
-      "night",
-    ],
+    themes: ["night"],
   },
 }
 
