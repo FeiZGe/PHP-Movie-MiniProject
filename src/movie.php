@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="font-poppins overflow-hidden">
+<body class="font-poppins overflow-x-hidden">
     <header>
         <?php include('./components/nav.php'); ?>
 
@@ -24,12 +24,12 @@
     </header>
 
      <!-- Start Main Content -->
-     <main class="container mx-auto mt-0 ">
+     <main class="container mx-auto mt-16 ">
         <!-- ภาพหนัง -->
-        <div class="relative bg-cover bg-center w-full h-screen mb-4 bg-black" style="width: 100vw; margin-left: calc(-50vw + 50%);">
+        <div class="relative z-0" style="width: 100vw; margin-left: calc(-50vw + 50%);">
 
             <!-- Container สำหรับชื่อและปุ่มเล่น -->
-            <section class="absolute left-0 flex justify-between w-full top-60 px-40">
+            <section class=" left-0 flex justify-between w-full mt-60 px-40">
             <!-- ชื่อและคำอธิบายหนัง -->
             <div>
                 <h2 class=" uppercase text-6xl font-bold ">Movie Name</h2>
@@ -44,9 +44,21 @@
          
         </div>  
 
-        <section class="absolute left-0 right-0 z-20 mt-[-400px] mb-4 px-8">
+            <section class="left-0 right-0 z-20 mt-24 px-0 flex gap-6">
+                <!-- 1st Card - Wider -->
+                <div class="card bg-base-300 w-full h-80 shadow-xl flex flex-col justify-center items-center p-8 ml-4"> <!-- ปรับค่าที่นี่ -->
+                    <h3 class="text-lg font-normal mb-2 text-left">Actors</h3>
+                </div>
+
+                <!-- 2nd Card - Narrower -->
+                <div class="card bg-base-300 w-96 h-80 shadow-xl flex flex-col justify-center items-center p-8">
+                    <h3 class="text-lg font-normal mb-2 text-center">Rating</h3>
+                </div>
+            </section>
+
+        <section class="left-0 right-0 z-20 mt-20 px-0">
             <div>
-                <h3 class="text-xl font-normal mb-2 pl-52">Also Be Like</h3>
+                <h3 class="text-xl font-normal mb-2">Also Be Like</h3>
             </div> 
             <!-- Movie rec -->
             <article class=" h-52 flex flex-row justify-center items-center gap-3 z-10 ">
@@ -90,10 +102,12 @@
             </article>
         </section>
 
+        
+
     </main>
     <!-- End Main Content -->
 
-   <footer class="text-neutral-500 items-center p-4 container mx-auto flex flex-col-reverse justify-center sm:flex-row sm:justify-between gap-1">
+    <footer class="text-neutral-500 items-center p-4 container mx-auto flex flex-col-reverse justify-center sm:flex-row sm:justify-between gap-1 mt-16">
         <?php include('./components/footer.php'); ?>
     </footer>
 </body>
