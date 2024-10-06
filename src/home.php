@@ -142,6 +142,29 @@
             </div>
         </section>
 
+        <!-- Journey -->
+        <section class="pt-8">
+            <div class="bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-base-100 via-blue-800 to-sky-600 h-96 flex items-center justify-center rounded-t-[60px] relative">
+                <div class="text-center z-[1] w-3/4">
+                    <p class="badge badge-neutral text-xs mb-4">Journey</p>
+                    <h2 class="text-2xl sm:text-5xl font-bold text-pretty mb-2 bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-400 bg-clip-text text-transparent">
+                        Your Movie-Watching Journey Starts Here
+                    </h2>
+                    <p class="text-neutral-300 mt-4 text-pretty">
+                        No matter what kind of movie you’re in the mood for, Pandora is your go-to destination for quality content at no cost. 
+                        <span class="text-info">Log in now</span> and unlock endless entertainment – for free!
+                    </p>
+                    <div class="mt-6 flex justify-center">
+                        <a class="py-2 px-5 bg-neutral-200 text-neutral-600 font-semibold shadow rounded-xl hover:bg-primary hover:text-primary-content hover:scale-110 transition duration-300 ease-in-out" href="#">Sign In</a>
+                    </div>
+                </div>
+
+                <div class="absolute z-0 bottom-0 w-full h-2/5 bg-gradient-to-t from-base-100"></div>
+            </div>
+
+            <div class="divider"></div>
+        </section>
+
     </main>
     <!-- End Main Content -->
 
