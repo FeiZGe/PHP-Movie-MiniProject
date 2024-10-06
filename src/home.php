@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="night">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +8,14 @@
 
     <title>Home | Pandora</title>
 
-    <!-- Tailwind -->
-    <link rel="stylesheet" href="./style/twoutput.css">
+    <!-- Tailwind + DaisyUI -->
+    <link rel="stylesheet" href="./style/output.css">
 
     <!-- LINK -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
-<body class="font-poppins text-neutral-200">
+<body class="font-poppins">
     <header>
         <?php include('./components/authnav.php'); ?>
     </header>
@@ -44,7 +44,7 @@
         <!-- video window -->
         <section class="flex justify-center">
             <!-- Background -->
-            <div class="absolute inset-x-0 m-auto h-80 max-w-lg bg-gradient-to-tr from-indigo-400 via-purple-900 to-[#C084FC] blur-[190px] -z-10"></div>
+            <div class="absolute inset-x-0 m-auto h-80 max-w-lg bg-gradient-to-tr from-indigo-400 via-purple-900 to-[#C084FC] blur-[190px] -z-10 opacity-80"></div>
             <!-- End -->
             <div class="mockup-window bg-base-200 w-3/4">
                 <div class="bg-base-200 flex justify-center">

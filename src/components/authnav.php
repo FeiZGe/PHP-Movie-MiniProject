@@ -1,4 +1,4 @@
-<nav class="w-full px-4 sm:px-8 py-4 fixed top-0">
+<nav class="w-full px-4 sm:px-8 py-4 fixed top-0 z-10">
     <div class="grid grid-cols-2 gap-2">
         <!-- Logo -->
         <section class="col-span-1 flex items-center">
@@ -16,7 +16,7 @@
                 </li>
                 <li>
                     <a href="#" 
-                       class="btn btn-sm btn-primary hover:bg-secondary hover:text-neutral hover:scale-105 ease-in-out">
+                       class="btn btn-sm btn-primary hover:scale-105 ease-in-out">
                         Sign In
                     </a>
                 </li>
