@@ -116,6 +116,32 @@
             </article>
         </section>
 
+        <!-- Gerne -->
+        <section></section>
+
+        <!-- Support devices -->
+        <section class="w-full flex justify-center">
+
+            <div class="flex flex-col sm:flex-row gap-2 w-4/5 pb-5">
+                <!-- content -->
+                <article class="flex-1">
+                    <h2 class="text-4xl md:text-6xl font-bold text-wrap py-2 bg-gradient-to-r from-neutral-400 via-neutral-200 to-neutral-400 bg-clip-text text-transparent">Compatible Devices</h2>
+                    <p class="text-neutral-500">
+                        Laptop,<br>Tablet,<br>Mobile.
+                    </p>
+                </article>
+
+                <!-- icon -->
+                <article class="flex-1 flex justify-center relative">
+                    <!-- spotlight -->
+                    <div class="absolute top-1/3 h-40 w-40 bg-gradient-to-tr from-sky-400 via-blue-700 to-primary blur-[95px] -z-10 opacity-70"></div>
+
+                    <!-- pic -->
+                    <img class="w-full" src="./assets/devices.png" alt="Support Devices">
+                </article>
+            </div>
+        </section>
+
     </main>
     <!-- End Main Content -->
 
