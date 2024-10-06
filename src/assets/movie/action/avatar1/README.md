@@ -9,6 +9,7 @@
 - Jake Sully (Sam Worthington) 1.jpg
 - Neytiri (Zoe Saldana) 2.jpg
 - Dr.Grace (Sigourney Weaver) 3.jpg
+-  (Michelle Rodriguez)
 
 ## Rating
 - IMDb 7.9/10
