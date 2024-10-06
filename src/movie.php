@@ -39,7 +39,9 @@
     </main>
     <!-- End Main Content -->
 
-    <footer> </footer>
+    <footer class="text-neutral-500 items-center p-4 container mx-auto flex flex-col-reverse justify-center sm:flex-row sm:justify-between gap-1">
+        <?php include('./components/footer.php'); ?>
+    </footer>
 </body>
 </html>
 ื
