@@ -120,10 +120,14 @@
         </section>
 
         <!-- Gerne -->
-        <section></section>
+        <section class="">
+            <article class="w-3/4 flex justify-center items-center mx-auto">
+                <img src="./assets/genre.png" alt="Movie Genre">
+            </article>
+        </section>
 
         <!-- Support devices -->
-        <section class="w-full flex justify-center">
+        <section class="w-full flex justify-center pt-8">
 
             <div class="flex flex-col sm:flex-row gap-2 w-4/5 pb-5">
                 <!-- content -->
