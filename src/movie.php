@@ -84,29 +84,63 @@
 
             <!-- movie card -->
             <article class="flex flex-nowrap w-full gap-4 mt-3 overflow-x-auto snap-x snap-mandatory no-scrollbar">
-                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
-                    
-                </div>
-                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
-                    
-                </div>
-                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
-                    
-                </div>
-                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
-                    
-                </div>
-                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
-                    
-                </div>
-                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
-                    
-                </div>
-                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
-                    
-                </div>
-                
-                
+                <a 
+                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
+                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
+                    href="#">
+                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
+                        Avatar 1 sads sad sdasd sadsa d sad assa
+                    </div>
+                </a>
+                <a 
+                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
+                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
+                    href="#">
+                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
+                        Avatar 1 sads sad sdasd sadsa d sad assa
+                    </div>
+                </a>
+                <a 
+                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
+                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
+                    href="#">
+                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
+                        Avatar 1 sads sad sdasd sadsa d sad assa
+                    </div>
+                </a>
+                <a 
+                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
+                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
+                    href="#">
+                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
+                        Avatar 1 sads sad sdasd sadsa d sad assa
+                    </div>
+                </a>
+                <a 
+                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
+                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
+                    href="#">
+                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
+                        Avatar 1 sads sad sdasd sadsa d sad assa
+                    </div>
+                </a>
+                <a 
+                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
+                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
+                    href="#">
+                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
+                        Avatar 1 sads sad sdasd sadsa d sad assa
+                    </div>
+                </a>
+                <a 
+                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
+                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
+                    href="#">
+                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
+                        Avatar 1 sads sad sdasd sadsa d sad assa
+                    </div>
+                </a>
+
             </article>
 
         </section>
