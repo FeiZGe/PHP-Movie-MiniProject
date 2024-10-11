@@ -1,4 +1,4 @@
-<nav class="w-full px-4 sm:px-8 py-4">
+<nav class="w-full fixed top-0 z-20 px-4 sm:px-8 py-2 bg-base-100 backdrop-filter backdrop-blur-sm bg-opacity-20">
     <div class="grid grid-cols-3 gap-2">
         <!-- Logo -->
         <section class="col-span-1 flex items-center">
@@ -8,19 +8,19 @@
         <!-- menu -->
         <section class="col-span-1 flex justify-center items-center">
             <ul class="flex flex-row gap-3">
-                <li><a href="#" class="text-md px-4 py-3 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Movie</a></li>
-                <li><a href="#" class="text-md px-4 py-3 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Gerne</a></li>
-                <li><a href="#" class="text-md px-4 py-3 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Animation</a></li>
+                <li><a href="#" class="text-md px-4 py-2 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Movie</a></li>
+                <li><a href="#" class="text-md px-4 py-2 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Gerne</a></li>
+                <li><a href="#" class="text-md px-4 py-2 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Animation</a></li>
             </ul>
         </section>
 
         <!-- avatar -->
         <section class="col-span-1 flex items-center justify-end gap-2">
-            <div class="avatar">
+            <article class="avatar">
                 <div class="w-10 rounded-full">
                     <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                 </div>
-            </div>
+            </article>
             <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
                     <!-- Name -->
