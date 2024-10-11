@@ -49,9 +49,11 @@
             <!-- End -->
             <div class="mockup-window bg-base-200 w-3/4">
                 <div class="bg-base-200 flex justify-center">
-                    <iframe width="" height="460" class="w-full"
-                        src="https://www.youtube.com/embed/J5vviuYdMoE?autoplay=1&mute=1&oop=1&controls=0&color=white&modestbranding=0&rel=0&playsinline=1&enablejsapi=1&playlist=J5vviuYdMoE">
-                    </iframe>
+                    <video class="w-full aspect-video" autoplay muted loop controls
+                        src="./assets/intro.mp4">
+                        Your browser does not support the video tag.
+                        <!-- Cr.https://www.tiktok.com/@kido.aep/video/7420182885908401441?_r=1&_t=8qJwo7WggKt -->
+                    </video>
                 </div>
             </div>
         </section>

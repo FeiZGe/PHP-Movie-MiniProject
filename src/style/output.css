@@ -1941,6 +1941,10 @@ html {
   margin-top: 5rem;
 }
 
+.mt-24 {
+  margin-top: 6rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -1957,10 +1961,6 @@ html {
   margin-top: 15rem;
 }
 
-.mt-24 {
-  margin-top: 6rem;
-}
-
 .flex {
   display: flex;
 }
@@ -1971,6 +1971,10 @@ html {
 
 .hidden {
   display: none;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
 }
 
 .h-2\/5 {
