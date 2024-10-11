@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/hidescroll.css">
 
 </head>
 <body class="font-poppins">
@@ -75,6 +76,39 @@
                     <span class="sr-only">Next</span>
                 </span>
             </button>
+        </section>
+
+        <!-- Show Movie -->
+        <section class="mt-6">
+            <h2 class="text-lg sm:text-xl font-semibold">Trending</h2>
+
+            <!-- movie card -->
+            <article class="flex flex-nowrap w-full gap-4 mt-3 overflow-x-auto snap-x snap-mandatory no-scrollbar">
+                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
+                    
+                </div>
+                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
+                    
+                </div>
+                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
+                    
+                </div>
+                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
+                    
+                </div>
+                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
+                    
+                </div>
+                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
+                    
+                </div>
+                <div class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center bg-no-repeat bg-center bg-cover snap-start" style="background-image: url(./assets/movie/action/avatar1/poster.jpg);">
+                    
+                </div>
+                
+                
+            </article>
+
         </section>
 
 
