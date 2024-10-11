@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pandora is a streaming website developed as a mini project for a Web Development class.">
     <meta name="author" content="FeiZGe Poonnys Nitipon556677 Ponderay">
-    <title>Movie | Pandora</title>
+    <title>Movie Detail</title>
 
     <!-- Tailwind + DaisyUI -->
     <link rel="stylesheet" href="./style/output.css">
