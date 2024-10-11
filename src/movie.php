@@ -18,7 +18,7 @@
 </head>
 <body class="font-poppins">
     <header>
-        <?php include('./components/authnav.php'); ?>
+        <?php include('./components/nav.php'); ?>
     </header>
 
     <!-- Start main content -->
