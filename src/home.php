@@ -73,12 +73,14 @@
             </article>
 
             <!-- Feature Card -->
-            <article class="h-80 flex flex-row justify-center items-center gap-5">
+            <article class="flex flex-col sm:flex-row justify-center items-center gap-5">
 
                 <!-- card 1 -->
-                <div class="card bg-base-300 w-72 h-full shadow-xl text-center">
+                <div class="card bg-base-300 w-72 h-full shadow-xl text-center justify-center">
                     <!-- card icon -->
-                    <div class="m-4 h-3/5 bg-blue-300 rounded-lg"></div>
+                    <div class="m-4 rounded-lg mx-auto">
+                        <svg width="120px" height="120px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#f5f5f5"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 21L17 21" stroke="#e3e3e3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M13.5 7L13.5 11M13.5 13L13.5 11M13.5 11L14.8706 9.43363M17 7L14.8706 9.43363M14.8706 9.43363L17 13" stroke="#e3e3e3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9.5 7L6.5 11.5L10 11.5L10 13" stroke="#e3e3e3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M2 16.4V3.6C2 3.26863 2.26863 3 2.6 3H21.4C21.7314 3 22 3.26863 22 3.6V16.4C22 16.7314 21.7314 17 21.4 17H2.6C2.26863 17 2 16.7314 2 16.4Z" stroke="#e3e3e3" stroke-width="1.5"></path> </g></svg>
+                    </div>
 
                     <!-- card content -->
                     <div class="flex flex-col mb-2 mx-4">
@@ -90,9 +92,11 @@
                 </div>
 
                 <!-- card 2 -->
-                <div class="card bg-base-300 w-72 h-full shadow-xl text-center">
+                <div class="card bg-base-300 w-72 h-full shadow-xl text-center justify-center">
                     <!-- card icon -->
-                    <div class="m-4 h-3/5 bg-blue-300 rounded-lg"></div>
+                    <div class="m-4 rounded-lg mx-auto">
+                        <svg height="120px" width="120px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#e3e3e3;} </style> <g> <path class="st0" d="M512,255.993l-63.304-51.63l28.999-76.354l-80.635-13.07l-13.063-80.635L307.63,63.311L256,0.013l-7.862,9.64 l-43.78,53.658L128.01,34.305l-13.076,80.635l-80.622,13.07l28.993,76.354L0,255.993l63.305,51.636l-28.993,76.361l80.622,13.076 l13.07,80.629l76.354-29L256,511.987l51.63-63.292l76.367,29l13.063-80.629l80.642-13.076l-29.006-76.361L512,255.993z M449.885,367.935l-70.52,11.437l-11.424,70.514l-66.786-25.366L256,479.882l-45.168-55.363l-66.773,25.366l-11.431-70.514 l-70.513-11.43l25.358-66.793L32.118,256l55.356-45.155l-25.358-66.78l70.513-11.43l11.431-70.514l66.773,25.359L256,32.125 l45.155,55.356l66.786-25.366l11.424,70.52l70.52,11.43l-25.359,66.78L479.882,256l-55.356,45.148L449.885,367.935z"></path> <path class="st0" d="M165.87,268.515l-30.677,6.858c-0.509,0.118-0.813-0.08-0.926-0.582l-4.024-17.985 c-0.112-0.502,0.079-0.806,0.588-0.918l36.842-8.246c0.747-0.165,1.136-0.786,0.972-1.539l-3.013-13.453 c-0.165-0.753-0.786-1.143-1.526-0.978l-54.828,12.263c-0.754,0.172-1.149,0.793-0.978,1.546l18.567,82.988 c0.172,0.753,0.786,1.137,1.546,0.965l15.963-3.568c0.753-0.171,1.143-0.779,0.971-1.532l-7.202-32.191 c-0.112-0.502,0.086-0.813,0.594-0.926l30.677-6.864c0.754-0.165,1.144-0.786,0.972-1.539l-2.98-13.328 C167.238,268.732,166.624,268.343,165.87,268.515z"></path> <path class="st0" d="M238.464,267.853c8.497-6.264,12.336-16.234,9.891-27.169c-3.488-15.594-17.502-23.945-34.986-20.033 l-34.067,7.624c-0.753,0.165-1.15,0.78-0.978,1.54l18.566,82.981c0.172,0.753,0.786,1.143,1.546,0.978l15.964-3.574 c0.753-0.172,1.143-0.786,0.971-1.539l-6.838-30.553c-0.106-0.502,0.086-0.812,0.595-0.925l11.437-2.557l21.718,28.015 c0.568,0.8,1.037,1.091,2.167,0.839l17.859-4.003c0.879-0.192,1.077-1.031,0.542-1.705L238.464,267.853z M220.697,258.094 l-15.084,3.377c-0.509,0.112-0.819-0.086-0.932-0.589l-4.414-19.742c-0.112-0.502,0.079-0.807,0.588-0.919l15.084-3.376 c7.043-1.579,12.501,1.553,13.935,7.975C231.335,251.355,227.741,256.515,220.697,258.094z"></path> <path class="st0" d="M328.126,267.986l-36.842,8.246c-0.503,0.112-0.807-0.079-0.926-0.588l-3.964-17.727 c-0.112-0.502,0.079-0.807,0.581-0.925l30.685-6.858c0.753-0.172,1.15-0.793,0.978-1.546l-2.98-13.321 c-0.172-0.76-0.793-1.15-1.546-0.978l-30.678,6.859c-0.502,0.118-0.806-0.08-0.925-0.582l-3.793-16.974 c-0.112-0.502,0.08-0.812,0.582-0.918l36.842-8.246c0.746-0.172,1.137-0.786,0.971-1.539l-3.013-13.452 c-0.165-0.76-0.786-1.143-1.526-0.978l-54.828,12.263c-0.753,0.172-1.15,0.786-0.978,1.539l18.566,82.988 c0.172,0.753,0.787,1.143,1.547,0.971l54.82-12.263c0.747-0.165,1.137-0.786,0.965-1.54l-3.007-13.452 C329.487,268.211,328.872,267.82,328.126,267.986z"></path> <path class="st0" d="M399.141,252.102l-36.836,8.24c-0.502,0.112-0.812-0.086-0.925-0.588l-3.964-17.728 c-0.112-0.502,0.086-0.812,0.588-0.918l30.671-6.872c0.767-0.165,1.15-0.78,0.984-1.533l-2.98-13.334 c-0.172-0.753-0.786-1.142-1.546-0.978l-30.678,6.872c-0.502,0.106-0.807-0.086-0.919-0.588l-3.799-16.974 c-0.112-0.502,0.079-0.806,0.582-0.925l36.835-8.24c0.767-0.172,1.156-0.786,0.991-1.539l-3.013-13.452 c-0.172-0.76-0.78-1.15-1.546-0.978l-54.814,12.263c-0.753,0.171-1.15,0.786-0.978,1.539l18.566,82.988 c0.172,0.753,0.786,1.143,1.54,0.972l54.814-12.263c0.766-0.172,1.156-0.786,0.984-1.54l-3.013-13.452 C400.522,252.32,399.908,251.93,399.141,252.102z"></path> </g> </g></svg>
+                    </div>
 
                     <!-- card content -->
                     <div class="flex flex-col mb-2 mx-4">
@@ -104,9 +108,11 @@
                 </div>
 
                 <!-- card 3 -->
-                <div class="card bg-base-300 w-72 h-full shadow-xl text-center">
+                <div class="card bg-base-300 w-72 h-full shadow-xl text-center justify-center">
                     <!-- card icon -->
-                    <div class="m-4 h-3/5 bg-blue-300 rounded-lg"></div>
+                    <div class="m-4 rounded-lg mx-auto">
+                        <svg width="120px" height="120px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#e3e3e3" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect x="8.5" y="12.5" width="47" height="39" rx="2"></rect><line x1="8.5" y1="20.88" x2="55.5" y2="20.88"></line><path d="M28.06,30.42V41.7a.5.5,0,0,0,.8.4l9.29-5.7a.49.49,0,0,0-.07-.85L28.79,30A.51.51,0,0,0,28.06,30.42Z"></path><line x1="10.5" y1="12.5" x2="17.33" y2="20.88"></line><line x1="17.41" y1="12.5" x2="24.24" y2="20.88"></line><line x1="24.38" y1="12.5" x2="31.21" y2="20.88"></line><line x1="31.77" y1="12.5" x2="38.6" y2="20.88"></line><line x1="39.15" y1="12.5" x2="45.98" y2="20.88"></line><line x1="46.67" y1="12.5" x2="53.5" y2="20.88"></line></g></svg>
+                    </div>
 
                     <!-- card content -->
                     <div class="flex flex-col mb-2 mx-4">
