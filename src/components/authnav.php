@@ -1,4 +1,4 @@
-<nav class="w-full px-4 sm:px-8 py-4 fixed top-0 z-10">
+<nav class="w-full px-4 sm:px-8 py-4 fixed top-0 z-10 bg-base-100 backdrop-filter backdrop-blur-sm bg-opacity-20">
     <div class="grid grid-cols-2 gap-2">
         <!-- Logo -->
         <section class="col-span-1 flex items-center">
