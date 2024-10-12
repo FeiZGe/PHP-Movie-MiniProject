@@ -9,13 +9,13 @@
         <section class="col-span-1 flex justify-end items-center">
             <ul class="flex flex-row gap-3">
                 <li>
-                    <a href="../register.php" 
+                    <a href="register.php" 
                        class="btn btn-sm btn-ghost text-neutral-content text-sm">
                         Register
                     </a>
                 </li>
                 <li>
-                    <a href="../login.php" 
+                    <a href="login.php" 
                        class="btn btn-sm btn-primary hover:scale-105 ease-in-out">
                         Sign In
                     </a>
