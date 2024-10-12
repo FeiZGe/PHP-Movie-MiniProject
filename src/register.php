@@ -23,8 +23,8 @@
 
     <!-- Start main content -->
     <main class="container mx-auto px-3 mt-3">
-        <div class="grid grid-cols-1 h-screen items-center">
-            <div class="card bg-base-100 shadow-xl w-full md:w-2/5 mx-auto">
+        <div class="grid grid-cols-1 items-center">
+            <div class="card bg-base-100 shadow-xl w-full md:w-2/5 mx-auto mt-8">
                 <div class="card-body">
                     <h1 class="font-raleway text-lg font-bold">Pandora</h1>
                     <div class="flex flex-col items-center">
@@ -42,6 +42,18 @@
 
                                 <!-- input -->
                                 <div class="flex flex-col gap-3">
+
+                                    <!-- avatar -->
+                                    <div class="avatar flex items-center justify-center">
+                                        <div class="w-24 rounded-full">
+                                            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                        </div>
+                                    </div>
+
+                                    <div class="flex justify-center items-center">
+                                        <input type="file" class="file-input file-input-md file-input-bordered w-full max-w-xs hover:file-input-primary" />
+                                    </div>
+
                                     <!-- Username -->
                                     <label for="username" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
                                         <svg
