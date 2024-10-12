@@ -1579,6 +1579,12 @@ html {
   gap: 1rem;
 }
 
+.divider-neutral:before,
+  .divider-neutral:after {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity)));
+}
+
 .dropdown.dropdown-open .dropdown-content,
 .dropdown:focus .dropdown-content,
 .dropdown:focus-within .dropdown-content {
@@ -2326,6 +2332,10 @@ html {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .block {
