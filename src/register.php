@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require '../database/dbconnect.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-theme="winter">
 <head>
@@ -38,7 +43,7 @@
 
                             <div class="divider divider-neutral"></div>
 
-                            <form action="#" class="mt-5">
+                            <form action="registerdb.php" method="post" enctype="multipart/form-data" class="mt-5">
 
                                 <!-- input -->
                                 <div class="flex flex-col gap-3">
@@ -46,13 +51,33 @@
                                     <!-- avatar -->
                                     <div class="avatar flex items-center justify-center">
                                         <div class="w-24 rounded-full">
-                                            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                            <img id="avatarPreview" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/925px-Unknown_person.jpg" alt="Avatar Preview" />
                                         </div>
                                     </div>
 
                                     <div class="flex justify-center items-center">
-                                        <input type="file" class="file-input file-input-md file-input-bordered w-full max-w-xs hover:file-input-primary" />
+                                        <input type="file" name="file" accept="image/png, image/gif, image/jpeg, image/jpg" class="file-input file-input-md file-input-bordered w-full max-w-xs hover:file-input-primary" require onchange="previewImage(event)" />
                                     </div>
+
+                                    <script>
+                                        function previewImage(event) {
+                                            const file = event.target.files[0]; // รับไฟล์แรกที่เลือก
+                                            const imgPreview = document.getElementById('avatarPreview'); // อ้างอิงถึง <img>
+                                            
+                                            if (file) {
+                                                const reader = new FileReader(); // สร้าง FileReader
+
+                                                // เมื่อโหลดไฟล์เสร็จ
+                                                reader.onload = function(e) {
+                                                    imgPreview.src = e.target.result; // เปลี่ยน src ของ <img> เป็น URL ของไฟล์ที่เลือก
+                                                }
+
+                                                reader.readAsDataURL(file); // อ่านไฟล์เป็น Data URL
+                                            } else {
+                                                imgPreview.src = "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"; // กำหนดให้กลับไปเป็นภาพเดิมถ้าไม่เลือกไฟล์
+                                            }
+                                        }
+                                    </script>
 
                                     <!-- Username -->
                                     <label for="username" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
@@ -64,7 +89,7 @@
                                             <path
                                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                                         </svg>
-                                        <input type="text" name="username" id="username" class="grow" placeholder="Username" />
+                                        <input type="text" name="username" id="username" class="grow" placeholder="Username" require />
                                     </label>
 
                                     <!-- email -->
@@ -79,7 +104,7 @@
                                             <path
                                             d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                                         </svg>
-                                        <input type="email" name="email" id="email" class="grow" placeholder="Email" />
+                                        <input type="email" name="email" id="email" class="grow" placeholder="Email" require />
                                     </label>
 
                                     <!-- Password -->
@@ -94,7 +119,7 @@
                                             d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                             clip-rule="evenodd" />
                                         </svg>
-                                        <input type="password" name="password" id="password" class="grow" placeholder="Password" />
+                                        <input type="password" name="password" id="password" class="grow" placeholder="Password" require />
                                     </label>
 
                                     <label for="password" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
@@ -108,13 +133,13 @@
                                             d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                             clip-rule="evenodd" />
                                         </svg>
-                                        <input type="password" name="confirm_password" id="password" class="grow" placeholder="Password" />
+                                        <input type="password" name="confirm_password" id="password" class="grow" placeholder="Password" require />
                                     </label>
                                 </div>
 
                                 <!-- Submit -->
                                 <div class="flex items-center justify-center">
-                                    <input type="submit" value="Confirm" class="btn btn-primary btn-wide mt-7 hover:scale-110 transition duration-300 ease-in-out">
+                                    <input type="submit" name="register" value="Confirm" class="btn btn-primary btn-wide mt-7 hover:scale-110 transition duration-300 ease-in-out">
                                 </div>
 
                                 <!-- more detail -->
