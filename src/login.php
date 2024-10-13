@@ -36,7 +36,7 @@
                                 <p class="text-sm">to your account below.</p>
                             </div>
 
-                            <form action="#" class="mt-5">
+                            <form action="logindb.php" method="post" class="mt-5">
 
                                 <!-- input -->
                                 <div class="flex flex-col gap-3">
@@ -50,7 +50,7 @@
                                             <path
                                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                                         </svg>
-                                        <input type="text" name="username" class="grow" placeholder="Username" />
+                                        <input type="text" name="username" id="username" class="grow" placeholder="Username" />
                                     </label>
 
                                     <!-- Password -->
@@ -65,12 +65,29 @@
                                             d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                             clip-rule="evenodd" />
                                         </svg>
-                                        <input type="password" name="password" class="grow" placeholder="Password" />
+                                        <input type="password" name="password" id="password" class="grow" placeholder="Password" />
                                     </label>
                                 </div>
 
+                                <?php if (isset($_SESSION['error'])) { ?>
+                                    <div class="text-error text-xs mt-1" role="alert">
+                                        <?php
+                                            echo $_SESSION['error'];
+                                            unset($_SESSION['error']);
+                                        ?>
+                                    </div>
+                                <?php } ?>
+                                <?php if (isset($_SESSION['success'])) { ?>
+                                    <div class="text-success text-xs mt-1" role="alert">
+                                        <?php
+                                            echo $_SESSION['success'];
+                                            unset($_SESSION['success']);
+                                        ?>
+                                    </div>
+                                <?php } ?>
+
                                 <!-- Submit -->
-                                <input type="submit" value="Sign In" class="btn btn-primary btn-wide mt-7 hover:scale-110 transition duration-300 ease-in-out">
+                                <input type="submit" name="signin" value="Sign In" class="btn btn-primary btn-wide mt-7 hover:scale-110 transition duration-300 ease-in-out">
 
                                 <!-- more detail -->
                                 <p class="text-xs opacity-75 mt-2 flex justify-center gap-1">

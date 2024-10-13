@@ -1,3 +1,17 @@
+<?php 
+
+    session_start();
+    require '../database/dbconnect.php';
+
+    var_dump($_SESSION); // ตรวจสอบว่า session ถูกส่งผ่านมาหรือไม่
+
+    // ตรวจสอบว่าผู้ใช้ล็อกอินหรือยัง
+    if (!isset($_SESSION['user_login'])) {
+        $_SESSION['error'] = 'Please log in to access this page.';
+        header('location: login.php');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

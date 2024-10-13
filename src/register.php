@@ -137,6 +137,23 @@
                                     </label>
                                 </div>
 
+                                <?php if (isset($_SESSION['error'])) { ?>
+                                    <div class="text-error text-xs mt-1" role="alert">
+                                        <?php
+                                            echo $_SESSION['error'];
+                                            unset($_SESSION['error']);
+                                        ?>
+                                    </div>
+                                <?php } ?>
+                                <?php if (isset($_SESSION['success'])) { ?>
+                                    <div class="text-success text-xs mt-1" role="alert">
+                                        <?php
+                                            echo $_SESSION['success'];
+                                            unset($_SESSION['success']);
+                                        ?>
+                                    </div>
+                                <?php } ?>
+
                                 <!-- Submit -->
                                 <div class="flex items-center justify-center">
                                     <input type="submit" name="register" value="Confirm" class="btn btn-primary btn-wide mt-7 hover:scale-110 transition duration-300 ease-in-out">

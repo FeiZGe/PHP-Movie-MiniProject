@@ -1,3 +1,13 @@
+<?php 
+
+    session_start();
+    require '../database/dbconnect.php';
+    if (!isset($_SESSION['user_login'])) {
+        $_SESSION['error'] = 'Please log in to access this page.';
+        header('location: login.php');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="night">
 <head>

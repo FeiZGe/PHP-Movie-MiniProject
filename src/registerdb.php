@@ -84,13 +84,15 @@
                     $stmt->bindParam(":avatar", $newFileName); // ชื่อไฟล์ที่อัพโหลด
                     $stmt->bindParam(":role", $role);
                     $stmt->execute();
-
-                    $_SESSION['success'] = "Create an account success! <a href='signin.php' class='alert-link'>click here</a> to sign in.";
+                
+                    $_SESSION['success'] = "Create an account success! <a href='login.php' class='link link-secondary'>click here</a> to sign in.";
                     header("location: register.php");
                 } else {
-                    $_SESSION['error'] = "Sorry, there was an error uploading your file.";
+                    // แสดงข้อผิดพลาดเพิ่มเติม
+                    $error = $_FILES["file"]["error"];
+                    $_SESSION['error'] = "Sorry, there was an error uploading your file. Error code: $error";
                     header("location: register.php");
-                }
+                }                
 
             } catch (PDOException $e) {
                 $_SESSION['error'] = "Something went wrong, please try again.";
