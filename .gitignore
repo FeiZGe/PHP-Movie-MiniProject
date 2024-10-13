@@ -6,4 +6,4 @@
 .DS_Store
 
 dbconnect.php
-/database/dbconnect.php
+database/dbconnect.php
