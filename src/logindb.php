@@ -30,12 +30,12 @@ error_reporting(E_ALL);
                 if ($check_data->rowCount() > 0) {
 
                     if ($username == $row['username']) {
-                        if (password_verify($password, $row['password'])) {
+                        if ($password == $row['password']) {
                             if ($row['role'] == '1') {
-                                $_SESSION['admin_login'] = $row['id'];
+                                $_SESSION['admin_login'] = $row['userID'];
                                 header("location: admin/dashboard.php");
                             } else {
-                                $_SESSION['user_login'] = $row['id'];
+                                $_SESSION['user_login'] = $row['userID'];
                                 header("location: movie.php");
                             }
                         } else {

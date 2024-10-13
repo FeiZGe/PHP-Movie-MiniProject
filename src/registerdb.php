@@ -69,9 +69,6 @@
             header("location: register.php");
         } else {
 
-            // เข้ารหัส password
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
             try {
                 // อัพโหลดไฟล์
                 if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
@@ -79,7 +76,7 @@
                     $stmt = $conn->prepare("INSERT INTO users(username, password, email, avatar, role) 
                                             VALUES(:username, :password, :email, :avatar, :role)");
                     $stmt->bindParam(":username", $username);
-                    $stmt->bindParam(":password", $hashedPassword);
+                    $stmt->bindParam(":password", $password);
                     $stmt->bindParam(":email", $email);
                     $stmt->bindParam(":avatar", $newFileName); // ชื่อไฟล์ที่อัพโหลด
                     $stmt->bindParam(":role", $role);

@@ -1,3 +1,12 @@
+<?php 
+
+    if (isset($_SESSION['user_login'])) {
+        $user_id = $_SESSION['user_login'];
+        $stmt = $conn->query("SELECT * FROM users WHERE userID = $user_id");
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+?>
 <nav class="w-full fixed top-0 z-50 px-4 sm:px-8 py-2 bg-base-100 backdrop-filter backdrop-blur-sm bg-opacity-20">
     <div class="grid grid-cols-3 gap-2">
         <!-- Logo -->
@@ -25,7 +34,7 @@
                 <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
                     <!-- Name -->
                     <article>
-                        <h3>Pooh</h3>
+                        <h3><?php echo $row['username']?></h3>
                     </article>
                 </div>
                 <ul
@@ -38,7 +47,7 @@
                         </a>
                     </li>
                     <li><a class="my-1">Settings</a></li>
-                    <li><a class="bg-error hover:bg-red-600 my-1">Logout</a></li>
+                    <li><a href="logout.php" class="bg-error hover:bg-red-600 my-1">Logout</a></li>
                 </ul>
             </div>
         </section>
