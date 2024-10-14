@@ -4,7 +4,7 @@
         $user_id = $_SESSION['user_login'];
         $stmt = $conn->query("SELECT * FROM users WHERE userID = $user_id");
         $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
     }
 ?>
 <nav class="w-full fixed top-0 z-50 px-4 sm:px-8 py-2 bg-base-100 backdrop-filter backdrop-blur-sm bg-opacity-20">
@@ -27,21 +27,21 @@
         <section class="col-span-1 flex items-center justify-end gap-2">
             <article class="avatar">
                 <div class="w-10 rounded-full">
-                    <img src="assets/avatar/<?php echo $row['avatar']?>" />
+                    <img src="assets/avatar/<?php echo $user['avatar']?>" />
                 </div>
             </article>
             <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
                     <!-- Name -->
                     <article>
-                        <h3><?php echo $row['username']?></h3>
+                        <h3><?php echo $user['username']?></h3>
                     </article>
                 </div>
                 <ul
                 tabindex="0"
                 class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                     <li>
-                        <a class="justify-between my-1">
+                        <a href="profile.php" class="justify-between my-1">
                         Profile
                         <span class="badge badge-info">New</span>
                         </a>
