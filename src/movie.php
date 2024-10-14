@@ -111,7 +111,7 @@
                 <h3 class="text-md sm:text-lg font-semibold mt-5"><?= htmlspecialchars($genre['genreName']); ?></h3>
 
                 <!-- movie card -->
-                <article class="flex flex-nowrap w-full gap-4 mt-3 overflow-x-auto snap-x snap-mandatory no-scrollbar">
+                <article class="flex flex-nowrap w-full gap-4 mt-3 overflow-x-auto snap-x snap-mandatory">
                     <?php foreach ($movies as $movie): ?>
                         <?php if ($movie['genreID'] == $genre['genreID']): ?>
                             <a 
