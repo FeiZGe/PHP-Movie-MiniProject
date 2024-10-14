@@ -2,18 +2,6 @@
     session_start();
     require '../../database/dbconnect.php';
 
-    try {
-        // ดึงข้อมูลจากตาราง movies ทั้งหมด
-        $stmt = $conn->prepare("SELECT movies.*, genre.genreName 
-            FROM movies 
-            JOIN genre ON movies.genreID = genre.genreID");
-        $stmt->execute();
-        $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    } catch (PDOException $e) {
-        echo "<script>alert('Error: " . $e->getMessage() . "');</script>";
-    }
-
     if (isset($_GET['movieID'])) {
         $movieID = $_GET['movieID'];
     
@@ -21,6 +9,11 @@
         $stmt->bindParam(':movieID', $movieID);
         $stmt->execute();
         $movie = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // ดึงข้อมูลจากตาราง genre
+        $stmt = $conn->prepare("SELECT genreID, genreName FROM genre");
+        $stmt->execute();
+        $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     if (isset($_POST['submit'])) {
@@ -46,7 +39,7 @@
             $_SESSION['error'] = "Failed to update movie";
         }
 
-        header("location: admin.php");
+        header("location: dashboard.php");
     }
 ?>
 
@@ -81,55 +74,44 @@
                     <h1 class="text-3xl font-bold">Edit movie</h1>
                     <form action="editmovie.php" method="post">
                         <div class="w-4/5 justify-center mx-auto">
+                            <input type="hidden" name="movieID" value="<?= $movie['movieID']; ?>">
+
                             
                             <div class="flex flex-col justify-center gap-2 mb-4 mt-6">
                                 <!-- movie name -->
                                 <label for="moviename" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
                                     Movie : 
-                                    <input type="text" name="moviename" id="moviename" class="grow" placeholder="name" />
+                                    <input type="text" name="moviename" id="moviename" class="grow" value="<?= htmlspecialchars($movie['movieName']); ?>" />
                                 </label>
 
                                 <!-- trailer -->
                                 <label for="trailer" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
                                     Trailer : 
-                                    <input type="text" name="trailer" id="trailer" class="grow" placeholder="url" />
+                                    <input type="text" name="trailer" id="trailer" class="grow" value="<?= htmlspecialchars($movie['trailer']); ?>" />
                                 </label>
 
                                 <!-- Poster -->
                                 <label for="poster" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
                                     Poster : 
-                                    <input type="text" name="poster" id="poster" class="grow" placeholder="url" />
+                                    <input type="text" name="poster" id="poster" class="grow" value="<?= htmlspecialchars($movie['poster']); ?>" />
                                 </label>
 
                                 <!-- Genre -->
                                 <select id="genre" name="genre" class="select select-bordered w-full max-w-xs hover:input-primary invalid:input-error" >
                                     <option disabled selected>Choose genre</option>
                                     <?php foreach ($genres as $genre): ?>
-                                        <option value="<?php echo htmlspecialchars($genre['genreID']); ?>">
+                                        <option value="<?php echo htmlspecialchars($genre['genreID']); ?>" <?= $movie['genreID'] == $genre['genreID'] ? 'selected' : '' ?> >
                                             <?php echo htmlspecialchars($genre['genreName']); ?>
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
 
                                 <!-- Movie detail -->
-                                <textarea id="detail" name="detail" class="textarea textarea-bordered hover:input-primary" placeholder="Detail" ></textarea>
+                                <textarea id="detail" name="detail" class="textarea textarea-bordered hover:input-primary" >
+                                    <?= htmlspecialchars($movie['detail']); ?>
+                                </textarea>
 
-                                <?php if (isset($_SESSION['error'])) { ?>
-                                    <div class="text-error text-xs mt-1" role="alert">
-                                        <?php
-                                            echo $_SESSION['error'];
-                                            unset($_SESSION['error']);
-                                        ?>
-                                    </div>
-                                <?php } ?>
-                                <?php if (isset($_SESSION['success'])) { ?>
-                                    <div class="text-success text-xs mt-1" role="alert">
-                                        <?php
-                                            echo $_SESSION['success'];
-                                            unset($_SESSION['success']);
-                                        ?>
-                                    </div>
-                                <?php } ?>
+                                
                             </div>
 
                             <section class="flex flex-row justify-center">
