@@ -58,7 +58,7 @@
                     <a 
                         class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
                         style="background-image: url(<?php echo htmlspecialchars($movie['poster']); ?>);"
-                        href="#">
+                        href="moviedetail.php?movieID=<?php echo htmlspecialchars($movie['movieID']); ?>">
                         <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
                             <?php echo htmlspecialchars($movie['movieName']); ?>
                         </div>
