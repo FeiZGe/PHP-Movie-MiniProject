@@ -12,6 +12,7 @@
         $password = $_POST['password'];
         $confirmPassword = $_POST['confirm_password'];
         $role = 0; // common users
+        $genres = $_POST['genre']; // ดึงข้อมูล genre ที่ถูกเลือก
         
         // ตรวจสอบว่าอัพโหลดไฟล์หรือไม่
         if (!empty($_FILES['file']['name'])) {
@@ -81,9 +82,19 @@
                     $stmt->bindParam(":avatar", $newFileName); // ชื่อไฟล์ที่อัพโหลด
                     $stmt->bindParam(":role", $role);
                     $stmt->execute();
+
+                    // ดึงค่า userID ที่ถูกเพิ่มล่าสุด
+                    $user_id = $conn->lastInsertId();
+
+                    foreach ($genres as $genreID) {
+                        $stmt = $conn->prepare("INSERT INTO userGenre (userID, genreID) VALUES (:userID, :genreID)");
+                        $stmt->bindParam(':userID', $user_id); // เปลี่ยนจาก $userID เป็น $user_id
+                        $stmt->bindParam(':genreID', $genreID);
+                        $stmt->execute(); // ต้องเพิ่มบรรทัดนี้เพื่อให้คำสั่งทำงาน
+                    }                    
                 
                     $_SESSION['success'] = "Create an account success! <a href='login.php' class='link link-secondary'>click here</a> to sign in.";
-                    header("location: register.php");
+                    header("location: login.php");
                 } else {
                     // แสดงข้อผิดพลาดเพิ่มเติม
                     $error = $_FILES["file"]["error"];
