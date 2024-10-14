@@ -7,6 +7,14 @@
         $stmt = $conn->prepare("SELECT genreID, genreName FROM genre");
         $stmt->execute();
         $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // ดึงข้อมูลจากตาราง movies ทั้งหมด
+        $stmt = $conn->prepare("SELECT movies.*, genre.genreName 
+            FROM movies 
+            JOIN genre ON movies.genreID = genre.genreID");
+        $stmt->execute();
+        $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     } catch (PDOException $e) {
         echo "<script>alert('Error: " . $e->getMessage() . "');</script>";
     }
@@ -84,29 +92,31 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php foreach ($movies as $movie): ?>
                             <!-- row 1 -->
                             <tr>
                                 <td>
                                     <div class="flex items-center gap-3">
-                                        <div class="w-20 h-28 rounded-lg bg-cover bg-no-repeat bg-center" style="background-image: url(adminbg.jpg)">
+                                        <div class="w-20 h-28 rounded-lg bg-cover bg-no-repeat bg-center" style="background-image: url(<?php echo htmlspecialchars($movie['poster']); ?>)">
                                             
                                         </div>
                                         <div>
                                             <!-- Movie name -->
                                             <div class="font-bold">
-                                                Avatar
+                                                <?php echo htmlspecialchars($movie['movieName']); ?>
                                             </div>
 
                                             <!-- Movie genre -->
                                             <div class="badge badge-primary badge-sm badge-outline">
-                                                Fantasy
+                                                <?php echo htmlspecialchars($movie['genreName']); ?>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
+                                    <!-- detail -->
                                     <div class="text-pretty">
-                                        Jake Sully ทหารหนุ่มที่พิการ ถูกส่งไปยังดาว Pandora ในภารกิจสำรวจและค้นหาทรัพยากรที่สำคัญ แต่เขากลับพบว่าความเชื่อมโยงระหว่างเผ่า Na'vi และธรรมชาติทำให้เขาต้องเลือกระหว่างการปกป้อง Pandora กับการรับใช้อาณานิคมของมนุษย์
+                                        <?php echo htmlspecialchars($movie['detail']); ?>
                                     </div>
                                 </td>
                                 <td>
@@ -122,7 +132,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            
+                            <?php endforeach; ?>
                             </tbody>
                             
                         </table>
@@ -173,7 +183,7 @@
                         </select>
 
                         <!-- Movie detail -->
-                        <textarea id="detail" name="detail" class="textarea textarea-bordered hover:input-primary invalid:input-error" placeholder="Detail" required></textarea>
+                        <textarea id="detail" name="detail" class="textarea textarea-bordered hover:input-primary" placeholder="Detail" required></textarea>
 
                         <?php if (isset($_SESSION['error'])) { ?>
                             <div class="text-error text-xs mt-1" role="alert">
