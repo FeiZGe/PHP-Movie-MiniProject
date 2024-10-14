@@ -11,7 +11,7 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="night">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
             <p class="text-gray-500 mb-8">We’re here to help! Please fill out the form below.</p>
         </div>
         
-        <form class="w-full max-w-lg shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 bg-slate-950">
+        <form class="w-full max-w-lg shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 bg-base-300">
             <div class="mb-4">
                 <label for="name" class="block  text-sm font-bold mb-2">Name</label>
                 <input type="text" id="name" name="name" class="shadow appearance-none rounded-xl w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline bg-slate-800" required>
