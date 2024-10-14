@@ -39,7 +39,7 @@
                     <h1 class="font-raleway text-lg font-bold">Pandora</h1>
                     <div class="flex flex-col items-center">
 
-                        <div>
+                        
                             <!-- titile -->
                             <div class="mt-3 flex flex-col gap-1 items-center text-center">
                                 <h2 class="card-title text-3xl text-wrap">Register an Account</h2>
@@ -181,7 +181,7 @@
                                     Do you have an account? <a href="login.php" class="link link-secondary">Sign In</a>
                                 </p>
                             </form>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
