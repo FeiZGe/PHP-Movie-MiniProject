@@ -2,6 +2,12 @@
 session_start();
 require '../../database/dbconnect.php';
 
+// ตรวจสอบว่าผู้ใช้เป็น admin หรือไม่
+if (!isset($_SESSION['admin_login'])) {
+    $_SESSION['error'] = 'Please log in to access this page.';
+    header('location: ../login.php');
+}
+
 if (isset($_POST['submit'])) {
     $movieName = $_POST['moviename'];
     $trailer = $_POST['trailer'];

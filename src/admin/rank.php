@@ -2,6 +2,12 @@
     session_start();
     require '../../database/dbconnect.php';
 
+    // ตรวจสอบว่าผู้ใช้เป็น admin หรือไม่
+    if (!isset($_SESSION['admin_login'])) {
+        $_SESSION['error'] = 'Please log in to access this page.';
+        header('location: ../login.php');
+    }
+
     // ดึงข้อมูลผู้ใช้ที่มี role = 1 (admin)
     $stmt = $conn->prepare("SELECT * FROM users WHERE role = 1");
     $stmt->execute();

@@ -2,6 +2,12 @@
     session_start();
     require '../../database/dbconnect.php';
 
+    // ตรวจสอบว่าผู้ใช้เป็น admin หรือไม่
+    if (!isset($_SESSION['admin_login'])) {
+        $_SESSION['error'] = 'Please log in to access this page.';
+        header('location: ../login.php');
+    }
+
     try {
         // ดึงข้อมูลจากตาราง genre
         $stmt = $conn->prepare("SELECT genreID, genreName FROM genre");
@@ -126,7 +132,7 @@
                                         <a href="editmovie.php?movieID=<?php echo $movie['movieID']; ?>" class="btn btn-warning btn-square btn-sm tooltip tooltip-top tooltip-warning flex items-center justify-center transition duration-300 ease-in-out hover:scale-125" data-tip="Edit">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
-                                        <a href="#" class="btn btn-error btn-square btn-sm tooltip tooltip-top tooltip-error flex items-center justify-center transition duration-300 ease-in-out hover:scale-125" data-tip="Delete">
+                                        <a href="delmovie.php?movieID=<?php echo $movie['movieID']; ?>" class="btn btn-error btn-square btn-sm tooltip tooltip-top tooltip-error flex items-center justify-center transition duration-300 ease-in-out hover:scale-125" data-tip="Delete">
                                             <i class="fa-solid fa-trash"></i>
                                         </a>
                                     </div>
