@@ -17,9 +17,9 @@
         <!-- menu -->
         <section class="col-span-1 flex justify-center items-center">
             <ul class="flex flex-row gap-3">
-                <li><a href="#" class="text-md px-4 py-2 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Movie</a></li>
-                <li><a href="#" class="text-md px-4 py-2 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Genre</a></li>
-                <li><a href="#" class="text-md px-4 py-2 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Animation</a></li>
+                <li><a href="movie.php" class="text-md px-4 py-2 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Movie</a></li>
+                <li><a href="genre.php" class="text-md px-4 py-2 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Genre</a></li>
+                <li><a href="animation.php" class="text-md px-4 py-2 rounded-md hover:bg-neutral transition-all duration-100 delay-75">Animation</a></li>
             </ul>
         </section>
 
