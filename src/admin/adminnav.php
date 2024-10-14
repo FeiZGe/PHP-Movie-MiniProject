@@ -2,12 +2,12 @@
     <div class="flex flex-row items-center gap-4 rounded-full bg-neutral text-neutral-content w-56 px-2 py-1.5 mt-6 drop-shadow-[0_5px_8px_rgba(52,145,252,0.25)]">
         <!-- home -->
         <div class="flex-1 justify-start">
-            <a href="/dashboard.php" class="px-3 py-1 rounded-full hover:bg-primary hover:text-primary-content transition duration-300 ease-in-out">Home</a>
+            <a href="dashboard.php" class="px-3 py-1 rounded-full hover:bg-primary hover:text-primary-content transition duration-300 ease-in-out">Home</a>
         </div>
         
         <!-- rank -->
         <div class="flex flex-1 justify-end">
-            <a href="#" class="flex flex-row items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-content hover:bg-info hover:text-info-content transition duration-300 ease-in-out">
+            <a href="rank.php" class="flex flex-row items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-content hover:bg-info hover:text-info-content transition duration-300 ease-in-out">
                 <!-- icon -->
                 <i class="fa-solid fa-id-card"></i>
 
