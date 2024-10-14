@@ -27,7 +27,7 @@
         <section class="col-span-1 flex items-center justify-end gap-2">
             <article class="avatar">
                 <div class="w-10 rounded-full">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                    <img src="assets/avatar/<?php echo $row['avatar']?>" />
                 </div>
             </article>
             <div class="dropdown dropdown-end">
