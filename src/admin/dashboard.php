@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    require '../../database/dbconnect.php';
+
+    try {
+        // ดึงข้อมูลจากตาราง genre
+        $stmt = $conn->prepare("SELECT genreID, genreName FROM genre");
+        $stmt->execute();
+        $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "<script>alert('Error: " . $e->getMessage() . "');</script>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="winter">
 <head>
@@ -35,11 +48,28 @@
             <!-- titile -->
             <article class="flex flex-row items-center justify-between">
                 <h2 class="text-3xl font-bold bg-gradient-to-br from-base-content to-primary bg-clip-text text-transparent">Movie lists</h2>
-                <button class="btn btn-primary btn-sm flex flex-row justify-center items-center gap-1 transition duration-300 ease-in-out hover:scale-110">
+                <button class="btn btn-primary btn-sm flex flex-row justify-center items-center gap-1 transition duration-300 ease-in-out hover:scale-110" onclick="my_modal_insert.showModal()">
                     <i class="fa-solid fa-plus"></i>
                     <p>movie</p>
                 </button>
             </article>
+
+            <?php if (isset($_SESSION['error'])) { ?>
+                <div class="alert alert-error my-1" role="alert">
+                    <?php
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                    ?>
+                </div>
+            <?php } ?>
+            <?php if (isset($_SESSION['success'])) { ?>
+                <div class="alert alert-success my-1" role="alert">
+                    <?php
+                        echo $_SESSION['success'];
+                        unset($_SESSION['success']);
+                    ?>
+                </div>
+            <?php } ?>
 
             <article class="card bg-base-100 shadow-xl mt-5">
                 <div class="card-body">
@@ -102,6 +132,75 @@
         </section>
     </main>
     <!-- End Main Content -->
+
+    <!-- modal -->
+    <dialog id="my_modal_insert" class="modal">
+        <div class="modal-box">
+            <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <h1 class="text-3xl font-bold">Add movie</h1>
+            <form action="addmovie.php" method="post" enctype="multipart/form-data">
+                <div class="w-4/5 justify-center mx-auto">
+                    
+                    <div class="flex flex-col justify-center gap-2 mb-4 mt-6">
+                        <!-- movie name -->
+                        <label for="moviename" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
+                            Movie : 
+                            <input type="text" name="moviename" id="moviename" class="grow" placeholder="name" required />
+                        </label>
+
+                        <!-- trailer -->
+                        <label for="trailer" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
+                            Trailer : 
+                            <input type="text" name="trailer" id="trailer" class="grow" placeholder="url" required />
+                        </label>
+
+                        <!-- Poster -->
+                        <label for="poster" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
+                            Poster : 
+                            <input type="text" name="poster" id="poster" class="grow" placeholder="url" required />
+                        </label>
+
+                        <!-- Genre -->
+                        <select id="genre" name="genre" class="select select-bordered w-full max-w-xs hover:input-primary invalid:input-error" required>
+                            <option disabled selected>Choose genre</option>
+                            <?php foreach ($genres as $genre): ?>
+                                <option value="<?php echo htmlspecialchars($genre['genreID']); ?>">
+                                    <?php echo htmlspecialchars($genre['genreName']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+
+                        <!-- Movie detail -->
+                        <textarea id="detail" name="detail" class="textarea textarea-bordered hover:input-primary invalid:input-error" placeholder="Detail" required></textarea>
+
+                        <?php if (isset($_SESSION['error'])) { ?>
+                            <div class="text-error text-xs mt-1" role="alert">
+                                <?php
+                                    echo $_SESSION['error'];
+                                    unset($_SESSION['error']);
+                                ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (isset($_SESSION['success'])) { ?>
+                            <div class="text-success text-xs mt-1" role="alert">
+                                <?php
+                                    echo $_SESSION['success'];
+                                    unset($_SESSION['success']);
+                                ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <section class="flex flex-row justify-center">
+                        <input type="submit" name="submit" value="Confirm" class="btn btn-wide btn-primary transition ease-in-out duration-300 hover:scale-110">
+                    </section>
+                </div>
+            </form>
+        </div>
+
+    </dialog>
 
     <footer class="text-neutral-500 items-center p-4 container mx-auto flex flex-col-reverse justify-center sm:flex-row sm:justify-between gap-1">
         <?php include('../components/footer.php'); ?>
