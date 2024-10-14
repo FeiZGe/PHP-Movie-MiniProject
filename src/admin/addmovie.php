@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 
     // ตรวจสอบข้อมูล
     if (empty($movieName) || empty($trailer) || empty($poster) || empty($genreID)) {
-        $_SESSION['error'] = "กรุณากรอกข้อมูลให้ครบ.";
+        $_SESSION['error'] = "Please fill in complete information.";
         header("location: dashboard.php");
         exit();
     }
@@ -27,11 +27,11 @@ if (isset($_POST['submit'])) {
         $stmt->bindParam(":detail", $detail);
         $stmt->execute();
 
-        $_SESSION['success'] = "เพิ่มข้อมูลหนังเรียบร้อย!";
+        $_SESSION['success'] = "Movie has been added!";
         header("location: dashboard.php");
 
     } catch (PDOException $e) {
-        $_SESSION['error'] = "เกิดข้อผิดพลาด: " . $e->getMessage();
+        $_SESSION['error'] = "Error: " . $e->getMessage();
         header("location: dashboard.php");
     }
 }
