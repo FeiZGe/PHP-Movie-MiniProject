@@ -165,10 +165,10 @@
                     </h2>
                     <p class="text-neutral-300 mt-4 text-pretty">
                         No matter what kind of movie you’re in the mood for, Pandora is your go-to destination for quality content at no cost. 
-                        <span class="text-info">Log in now</span> and unlock endless entertainment – for free!
+                        <span class="text-info">Sign in now</span> and unlock endless entertainment – for free!
                     </p>
                     <div class="mt-6 flex justify-center">
-                        <a class="py-2 px-5 bg-neutral-200 text-neutral-600 font-semibold shadow rounded-xl hover:bg-primary hover:text-primary-content hover:scale-110 transition duration-300 ease-in-out" href="#">Sign In</a>
+                        <a class="py-2 px-5 bg-neutral-200 text-neutral-600 font-semibold shadow rounded-xl hover:bg-primary hover:text-primary-content hover:scale-110 transition duration-300 ease-in-out" href="login.php">Sign In</a>
                     </div>
                 </div>
 
