@@ -1,3 +1,15 @@
+<?php 
+
+    session_start();
+    require '../database/dbconnect.php';
+
+    // ตรวจสอบว่าผู้ใช้ล็อกอินหรือยัง
+    if (!isset($_SESSION['user_login'])) {
+        $_SESSION['error'] = 'Please log in to access this page.';
+        header('location: login.php');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +34,7 @@
     </header>
 
     <!-- Start main content -->
+    <div class="h-14"></div>
     <main class="container mx-auto px-3 mt-3 flex flex-col items-center justify-center h-screen">
         <div class="text-center mb-6">
             <h1 class="text-3xl font-bold mb-2">Contact Support</h1>

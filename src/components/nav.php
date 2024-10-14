@@ -46,7 +46,7 @@
                         <span class="badge badge-info">New</span>
                         </a>
                     </li>
-                    <li><a class="my-1">Settings</a></li>
+                    <li><a href="support.php" class="my-1">Supports</a></li>
                     <li><a href="logout.php" class="bg-error hover:bg-red-600 my-1">Logout</a></li>
                 </ul>
             </div>
