@@ -123,7 +123,7 @@
                                     <div class="flex flex-row justify-center items-center gap-1.5">
 
                                         <!-- edit btn -->
-                                        <a href="#" class="btn btn-warning btn-square btn-sm tooltip tooltip-top tooltip-warning flex items-center justify-center transition duration-300 ease-in-out hover:scale-125" data-tip="Edit">
+                                        <a href="editmovie.php?movieID=<?php echo $movie['movieID']; ?>" class="btn btn-warning btn-square btn-sm tooltip tooltip-top tooltip-warning flex items-center justify-center transition duration-300 ease-in-out hover:scale-125" data-tip="Edit">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
                                         <a href="#" class="btn btn-error btn-square btn-sm tooltip tooltip-top tooltip-error flex items-center justify-center transition duration-300 ease-in-out hover:scale-125" data-tip="Delete">
@@ -150,7 +150,7 @@
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             </form>
             <h1 class="text-3xl font-bold">Add movie</h1>
-            <form action="addmovie.php" method="post" enctype="multipart/form-data">
+            <form action="addmovie.php" method="post">
                 <div class="w-4/5 justify-center mx-auto">
                     
                     <div class="flex flex-col justify-center gap-2 mb-4 mt-6">
@@ -184,6 +184,87 @@
 
                         <!-- Movie detail -->
                         <textarea id="detail" name="detail" class="textarea textarea-bordered hover:input-primary" placeholder="Detail" required></textarea>
+
+                        <?php if (isset($_SESSION['error'])) { ?>
+                            <div class="text-error text-xs mt-1" role="alert">
+                                <?php
+                                    echo $_SESSION['error'];
+                                    unset($_SESSION['error']);
+                                ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (isset($_SESSION['success'])) { ?>
+                            <div class="text-success text-xs mt-1" role="alert">
+                                <?php
+                                    echo $_SESSION['success'];
+                                    unset($_SESSION['success']);
+                                ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <section class="flex flex-row justify-center">
+                        <input type="submit" name="submit" value="Confirm" class="btn btn-wide btn-primary transition ease-in-out duration-300 hover:scale-110">
+                    </section>
+                </div>
+            </form>
+        </div>
+
+    </dialog>
+    
+    <!-- edit modal -->
+    <?php
+
+        if (isset($_GET['movieID'])) {
+            $movieID = $_GET['movieID'];
+
+            $stmt = $conn->prepare("SELECT * FROM movies WHERE movieID = :movieID");
+            $stmt->bindParam(':movieID', $movieID);
+            $stmt->execute();
+            $movie = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+    ?>
+    <dialog id="my_modal_edit" class="modal">
+        <div class="modal-box">
+            <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <h1 class="text-3xl font-bold">Edit movie</h1>
+            <form action="editmovie.php" method="post">
+                <div class="w-4/5 justify-center mx-auto">
+                    
+                    <div class="flex flex-col justify-center gap-2 mb-4 mt-6">
+                        <!-- movie name -->
+                        <label for="moviename" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
+                            Movie : 
+                            <input type="text" name="moviename" id="moviename" class="grow" placeholder="name" />
+                        </label>
+
+                        <!-- trailer -->
+                        <label for="trailer" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
+                            Trailer : 
+                            <input type="text" name="trailer" id="trailer" class="grow" placeholder="url" />
+                        </label>
+
+                        <!-- Poster -->
+                        <label for="poster" class="input input-md input-bordered flex items-center gap-2 hover:input-primary invalid:input-error">
+                            Poster : 
+                            <input type="text" name="poster" id="poster" class="grow" placeholder="url" />
+                        </label>
+
+                        <!-- Genre -->
+                        <select id="genre" name="genre" class="select select-bordered w-full max-w-xs hover:input-primary invalid:input-error" >
+                            <option disabled selected>Choose genre</option>
+                            <?php foreach ($genres as $genre): ?>
+                                <option value="<?php echo htmlspecialchars($genre['genreID']); ?>">
+                                    <?php echo htmlspecialchars($genre['genreName']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+
+                        <!-- Movie detail -->
+                        <textarea id="detail" name="detail" class="textarea textarea-bordered hover:input-primary" placeholder="Detail" ></textarea>
 
                         <?php if (isset($_SESSION['error'])) { ?>
                             <div class="text-error text-xs mt-1" role="alert">
