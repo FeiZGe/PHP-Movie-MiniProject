@@ -7,6 +7,19 @@
         header('location: login.php');
     }
 
+    try {
+        // ดึงข้อมูลจากตาราง movies ที่เป็น Animation เท่านั้น
+        $stmt = $conn->prepare("SELECT movies.*, genre.genreName 
+        FROM movies 
+        JOIN genre ON movies.genreID = genre.genreID
+        WHERE genre.genreName = 'Animation'");
+        $stmt->execute();
+        $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    } catch (PDOException $e) {
+        echo "<script>alert('Error: " . $e->getMessage() . "');</script>";
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,8 +45,28 @@
     </header>
 
     <!-- Start main content -->
-    <main>
+    <main class="container mx-auto px-3 mt-3">
+        <div class="h-10"></div>
 
+        <!-- Show Movie -->
+        <section class="mt-6">
+            <h3 class="text-md sm:text-lg font-semibold mt-5">Animation</h3>
+
+            <!-- movie card -->
+            <article class="flex flex-wrap w-full gap-4 mt-3">
+                <?php foreach ($movies as $movie): ?>
+                    <a 
+                        class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
+                        style="background-image: url(<?php echo htmlspecialchars($movie['poster']); ?>);"
+                        href="#">
+                        <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
+                            <?php echo htmlspecialchars($movie['movieName']); ?>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            </article>
+
+        </section>
     </main>
     <!-- End main content -->
 
