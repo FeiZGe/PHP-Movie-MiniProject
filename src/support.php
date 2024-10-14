@@ -6,7 +6,7 @@
     <meta name="description" content="Pandora is a streaming website developed as a mini project for a Web Development class.">
     <meta name="author" content="FeiZGe Poonnys Nitipon556677 Ponderay">
 
-    <title>Supports | Pandora</title>
+    <title>Support | Pandora</title>
 
     <!-- Tailwind + DaisyUI -->
     <link rel="stylesheet" href="./style/output.css">
@@ -22,12 +22,18 @@
     </header>
 
     <!-- Start main content -->
-    <main class="container mx-auto px-3 mt-3">
-        <div class="h-10">
+    <main class="container mx-auto px-3 flex flex-col items-center justify-center h-screen">
+    <div class="h-10">
             <!-- space -->
         </div>
-        
-
+        <div class="text-center">
+            <div class="text-6xl mb-8">
+                <i class="fas fa-headset"></i>
+            </div>
+            <h1 class="text-3xl font-bold mb-4">Support</h1>
+            <p class="text-gray-500 mb-8">You got questions, we got answers. Bring them on.</p>
+            <a href="contactsup.php" class="btn btn-primary py-2 px-4 rounded-xl text-black  hover:scale-110 transition duration-300 ease-in-out">Contact Support</a>
+        </div>
     </main>
     <!-- End main content -->
 
