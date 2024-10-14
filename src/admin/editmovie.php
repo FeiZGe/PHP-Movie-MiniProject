@@ -2,6 +2,18 @@
     session_start();
     require '../../database/dbconnect.php';
 
+    try {
+        // ดึงข้อมูลจากตาราง movies ทั้งหมด
+        $stmt = $conn->prepare("SELECT movies.*, genre.genreName 
+            FROM movies 
+            JOIN genre ON movies.genreID = genre.genreID");
+        $stmt->execute();
+        $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    } catch (PDOException $e) {
+        echo "<script>alert('Error: " . $e->getMessage() . "');</script>";
+    }
+
     if (isset($_GET['movieID'])) {
         $movieID = $_GET['movieID'];
     
