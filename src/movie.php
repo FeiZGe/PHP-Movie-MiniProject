@@ -9,6 +9,20 @@
         header('location: login.php');
     }
 
+    // สมมติว่า $userID ถูกกำหนดไว้ใน session เมื่อผู้ใช้ล็อกอิน
+    $userID = $_SESSION['user_login'];
+
+    // ดึง genre ที่ผู้ใช้เลือกจากฐานข้อมูล
+    $stmt = $conn->prepare("SELECT genre.genreID, genre.genreName FROM userGenre INNER JOIN genre ON userGenre.genreID = genre.genreID WHERE userGenre.userID = :userID");
+    $stmt->bindParam(':userID', $userID);
+    $stmt->execute();
+    $userGenres = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // ถ้าต้องการดึง movies ทั้งหมด (หรือ genre เฉพาะที่ผู้ใช้เลือก) ตามที่คุณต้องการ
+    $stmtMovies = $conn->prepare("SELECT * FROM movies");
+    $stmtMovies->execute();
+    $movies = $stmtMovies->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="night">
@@ -92,68 +106,26 @@
 
         <!-- Show Movie -->
         <section class="mt-6">
-            <h2 class="text-lg sm:text-xl font-semibold">Trending</h2>
+            <!-- วนลูปแสดง genre -->
+            <?php foreach ($userGenres as $genre): ?>
+                <h3 class="text-md sm:text-lg font-semibold mt-5"><?= htmlspecialchars($genre['genreName']); ?></h3>
 
-            <!-- movie card -->
-            <article class="flex flex-nowrap w-full gap-4 mt-3 overflow-x-auto snap-x snap-mandatory no-scrollbar">
-                <a 
-                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
-                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
-                    href="#">
-                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
-                        Avatar 1 sads sad sdasd sadsa d sad assa
-                    </div>
-                </a>
-                <a 
-                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
-                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
-                    href="#">
-                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
-                        Avatar 1 sads sad sdasd sadsa d sad assa
-                    </div>
-                </a>
-                <a 
-                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
-                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
-                    href="#">
-                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
-                        Avatar 1 sads sad sdasd sadsa d sad assa
-                    </div>
-                </a>
-                <a 
-                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
-                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
-                    href="#">
-                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
-                        Avatar 1 sads sad sdasd sadsa d sad assa
-                    </div>
-                </a>
-                <a 
-                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
-                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
-                    href="#">
-                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
-                        Avatar 1 sads sad sdasd sadsa d sad assa
-                    </div>
-                </a>
-                <a 
-                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
-                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
-                    href="#">
-                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
-                        Avatar 1 sads sad sdasd sadsa d sad assa
-                    </div>
-                </a>
-                <a 
-                    class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
-                    style="background-image: url(./assets/movie/action/avatar1/poster.jpg);"
-                    href="#">
-                    <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
-                        Avatar 1 sads sad sdasd sadsa d sad assa
-                    </div>
-                </a>
-
-            </article>
+                <!-- movie card -->
+                <article class="flex flex-nowrap w-full gap-4 mt-3 overflow-x-auto snap-x snap-mandatory no-scrollbar">
+                    <?php foreach ($movies as $movie): ?>
+                        <?php if ($movie['genreID'] == $genre['genreID']): ?>
+                            <a 
+                                class="flex-none w-40 h-52 bg-base-300 rounded-xl flex flex-col justify-end items-center text-center bg-no-repeat bg-center bg-cover snap-start relative group text-wrap p-1" 
+                                style="background-image: url(<?php echo htmlspecialchars($movie['poster']); ?>);"
+                                href="#">
+                                <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 text-sm bg-base-200">
+                                    <?php echo htmlspecialchars($movie['movieName']); ?>
+                                </div>
+                            </a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </article>
+            <?php endforeach; ?>
 
         </section>
 
