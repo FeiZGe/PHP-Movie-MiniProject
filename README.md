@@ -8,6 +8,14 @@ In terms of management, Pandora's Admin system is designed for easy and efficien
 
 Pandora is not just an online movie streaming platform; it is a place that provides a personalized movie-watching experience tailored to your tastes. Whether you're seeking excitement, fun, or emotional depth, Pandora is ready to fulfill all your entertainment needs in one place.
 
+## Design
+- Home page
+![Home](src/assets/Home.png)
+- The main page will be displayed after logging in.
+![Main](src/assets/Main.png)
+- Admin page
+![Admin](src/assets/Admin.png)
+
 ## Co-developers
 - [FeiZGe](https://github.com/FeiZGe)
 - [Poonnys](https://github.com/Poonnys)
